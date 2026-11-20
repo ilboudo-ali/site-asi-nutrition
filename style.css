@@ -1,0 +1,335 @@
+/*--- Style géneral --- */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    background-color: #f4c764 !important;
+    color: #111111;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/*--- En-tête --- */
+header {
+    background-color: #111111;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 4px solid #84cc16;
+}
+
+.logo{
+    font-size: 1.6rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #ffffff;
+}
+
+/*--- Style du ASI --- */
+.logo .asi {
+    color: #f59e0b;
+}
+
+/*--- Style de NUTRITION --- */
+.logo .nutrition {
+    color: #84cc16;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+nav a:hover{
+    color: #84cc16;
+}
+
+#btn-pannier{
+    background-color: #f59e0b;
+    color: #111111;
+    border: none;
+    padding: 9px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3;
+}
+
+#btn-panier:hover {
+    background-color: #84cc16;
+    color: #111111;
+}
+
+/*--- Bannière principale avec image de fond --- */
+.hero {
+    background: linear-gradient(rgba(17, 17, 17, 0.8), rgba(17, 17, 17, 0.85)), url('image1.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 90px 20px;
+    border-bottom: 5px solid #f59e0b;
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+/*--- ASI en couleur --- */
+.hero h1 span {
+    color: #f59e0b;
+}
+
+.hero .slogan {
+    color : #84cc16;
+    font-size: 1.3rem;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.hero p{
+    font-size: 1.1rem;
+    max-width: 650px;
+    margin: 0 auto;
+    color: #e5e7eb;
+}
+
+.btn-principal {
+    display: inline-block;
+    margin-top: 25px;
+    background-color: #84cc16;
+    color: #111111;
+    padding: 13px 28px;
+    text-decoration: none;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.btn-principal:hover {
+    background-color: #f59e0b;
+    transform: scale(1.05);
+}
+
+/* --- Carrousel images debut --- */
+.carrousel-images {
+    max-width: 1100px;
+    width: 92%;
+    margin: 45px auto 30px auto;
+    padding: 15px;
+    background-color: #111111;
+    border-radius: 12px;
+}
+
+.conteneur-images {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+/* --- Format fixe des images sans aucun étirement --- */
+.conteneur-images img {
+    flex: 0 0 240px;
+    height: 310px;
+    width: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 2px solid #84cc16;
+    cursor: pointer;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.conteneur-images img:hover {
+    transform: scale(1.03);
+    border-color: #f59e0b;
+}
+
+/* --- Barre de defillement --- */
+.conteneur-images::-webkit-scrollbar {
+    height: 6px;
+}
+
+.conteneur-images::-webkit-scrollbar-track {
+    background: #222222;
+    border-radius: 10px;
+}
+
+.conteneur-images::-webkit-scrollbar-thumb {
+    background: #84cc16;
+    border-radius: 10px;
+}
+
+
+
+/* --- Grille et Cartes de Produit --- */
+main {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+main h2 {
+    text-align: center;
+    margin-bottom: 35px;
+    font-size: 2rem;
+    color: #111111;
+    text-transform: uppercase;
+}
+
+main h2::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #84cc16, #f59e0b);
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+/* --- Superposer les produits et leur description l'un au dessus de l'autre. --- */
+.grille-produits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.carte {
+    background-color: #baf4ba;
+    color: #111111;
+    border-radius: 10px;
+    border: 2px solid #84cc16;
+    padding: 22px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-top: 4px solid #84cc16; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s;
+}
+
+/* --- Changement du couleur du survol au touché --- */
+.carte:hover {
+    background-color: #fdf6e2;
+    transform: translateY(-5px);
+    border-top-color: #f59e0b;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.carte h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #111111;
+}
+
+.carte p {
+    color: #555555;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+/* --- Changement du couleur du survol au touché --- */
+.prix {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #f59e0b;
+    margin-bottom: 15px;
+}
+
+/* --- couleur noire du boutton ajouter --- */
+.btn-ajouter {
+    width: 100%;
+    padding: 11px;
+    background-color: #111111;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* --- Devient vert au survol --- */
+.btn-ajouter:hover {
+    background-color: #84cc16;
+    color: #111111;
+}
+
+/* --- Section Information (Mise au point) --- */
+.info-box {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 25px;
+    background: #111111;
+    color: #ffffff;
+    border-radius: 8px;
+    border-left: 6px solid #84cc16;
+}
+
+details {
+    cursor: pointer;
+}
+
+summary {
+    font-size: 1.15rem;
+    font-weight: bold;
+    color: #f59e0b;
+    outline: none;
+}
+
+details p {
+    margin-top: 12px;
+    color: #e5e7eb;
+    line-height: 1.6;
+}
+
+
+/*--- Adaptation Mobile ---*/
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .grille-produits {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+    }
+
+    .carrousel-images,
+    .mise-au-point {
+        width: 95%;
+        margin: 30px auto;
+        padding: 20px 15px;
+    }
+}
